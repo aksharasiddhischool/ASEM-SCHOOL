@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #9dffff; 
+    min-height: 100vh;         
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('asem_logo.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; 
+    opacity: 0.1;    
+    z-index: -1;       
+    pointer-events: none;
+}
+
+.main-header {
+    background-color: white;
+    padding: 15px 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.header-title h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1A2e35;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.sub-title {
+    margin: 5px 0 0 0;        
+    font-size: 0.85rem;       
+    color: #008080;          
+    font-weight: bold;
+    text-transform: uppercase; 
+    letter-spacing: 1.5px;   
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #1A2e35;
+    font-weight: 600;
+    margin-left: 30px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #008080; 
+}
+
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 50px;
+}
+
+.hero-image-box {
+    flex: 1 1 450px;
+}
+
+.school-photo {
+    width: 100%;
+    height: auto;
+    border: 10px solid white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.hero-text-box {
+    flex: 1 1 450px;
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: #2c3e50;
+    line-height: 1.8;
+}
+
+.hero-text-box h2 {
+    color: #008080; 
+    margin-top: 0;
+    border-bottom: 3px solid #008080;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.leadership-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px 40px 20px;
+    text-align: center;
+}
+
+.section-heading {
+    font-family: "Brush Script MT",;
+    font-size: 3rem;
+    color: #1A2e35;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 0px white;
+    display: inline-block;
+    border-bottom: 3px solid #008080;
+}
+
+.leadership-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.leader-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+}
+
+.img-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #008080;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.leader-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leader-card h3 {
+    color: #2c3e50;
+    margin: 10px 0 5px 0;
+    font-size: 1.3rem;
+}
+
+.role {
+    display: block;
+    font-weight: bold;
+    color: #008080;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.leader-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.school-footer {
+    background-color: #1A2e35;
+    color: white;
+    text-align: center;
+    margin-top: auto; 
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.govt-recognition {
+    background-color: #008080; 
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 10px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .header-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .header-nav a {
+        margin: 0;
+    }
+
+    .sub-title {
+        font-size: 0.75rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .govt-recognition {
+        font-size: 0.8rem;
+    }
+}
