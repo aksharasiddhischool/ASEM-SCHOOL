@@ -1,43 +1,80 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. SMOOTH SCROLLING FOR NAV LINKS
-    // This makes the page glide down when you click "About Us" instead of jumping instantly.
+    
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.header-nav');
     const navLinks = document.querySelectorAll('.header-nav a');
 
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    
+    function showContactSection() {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.classList.remove('hidden-section');
+            contactSection.classList.add('show-section');
+            setTimeout(() => {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }, 100); 
+        }
+    }
+
+    
+    if (window.location.hash === '#contact') {
+        showContactSection();
+    }
+
+    
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const href = link.getAttribute('href');
+
             
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            if (hamburger) hamburger.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
+
+            
+            if (href === '#contact' || href.includes('#contact')) {
+                
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    e.preventDefault();
+                    showContactSection();
+                }
+            }
+            
+            else if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     });
 
-    // 2. SCROLL FADE-IN ANIMATION
-    // This makes the cards "pop up" gently as you scroll down to them.
-    const observerOptions = {
-        threshold: 0.1 // Trigger when 10% of the item is visible
-    };
+    const observerOptions = { threshold: 0.1 };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
 
-    // Target elements to animate
-    const animatedElements = document.querySelectorAll('.hero-text-box, .leader-card');
+    const animatedElements = document.querySelectorAll(
+        '.hero-text-box, .leader-card, .admissions-section'
+    );
     
     animatedElements.forEach(el => {
-        el.classList.add('fade-in-section'); // Add initial hidden class
+        el.classList.add('fade-in-section'); 
         observer.observe(el);
     });
 });
