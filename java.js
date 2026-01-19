@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    
+    // --- EXISTING NAV AND ANIMATION LOGIC ---
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.header-nav');
-    const navLinks = document.querySelectorAll('.header-nav a');
-
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -12,65 +9,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-
-            // Close mobile menu
-            if (hamburger) hamburger.classList.remove('active');
-            if (navMenu) navMenu.classList.remove('active');
-
-            // Only smooth scroll if the link is an anchor on the current page
-            if (href.startsWith('#')) {
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    });
-
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
 
-    const animatedElements = document.querySelectorAll('.hero-text-box, .leader-card, .vision-card, .feature-card, .facility-item, .admissions-section');
-    
-    animatedElements.forEach(el => {
-        el.classList.add('fade-in-section'); 
-        el.classList.add('animate-start');
+    document.querySelectorAll('.hero-text-box, .leader-card, .vision-card, .feature-card, .facility-item').forEach(el => {
+        el.classList.add('fade-in-section');
         observer.observe(el);
     });
-});
 
-// Gallery Filtering Logic
-const filterButtons = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
+    // --- LIGHTBOX LOGIC ---
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const captionText = document.getElementById('caption');
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item img'));
+    let currentIndex = 0;
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+    if (lightbox) {
+        // Open Lightbox
+        galleryItems.forEach((img, index) => {
+            img.parentElement.addEventListener('click', () => {
+                lightbox.style.display = "block";
+                lightboxImg.src = img.src;
+                captionText.innerHTML = img.alt || "Akshara Siddhi Activities";
+                currentIndex = index;
+            });
+        });
 
-        const filterValue = button.getAttribute('data-filter');
+        // Close Lightbox
+        document.querySelector('.close-lightbox').addEventListener('click', () => {
+            lightbox.style.display = "none";
+        });
 
-        galleryItems.forEach(item => {
-            if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                item.style.display = 'block';
-                setTimeout(() => item.style.opacity = '1', 10);
-            } else {
-                item.style.opacity = '0';
-                setTimeout(() => item.style.display = 'none', 300);
+        // Close on outside click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) lightbox.style.display = "none";
+        });
+
+        // Navigation Function
+        window.changeImage = (n) => {
+            currentIndex += n;
+            if (currentIndex >= galleryItems.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = galleryItems.length - 1;
+            
+            lightboxImg.src = galleryItems[currentIndex].src;
+            captionText.innerHTML = galleryItems[currentIndex].alt || "Akshara Siddhi Activities";
+        };
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === "block") {
+                if (e.key === "ArrowLeft") changeImage(-1);
+                if (e.key === "ArrowRight") changeImage(1);
+                if (e.key === "Escape") lightbox.style.display = "none";
             }
         });
-    });
+    }
 });
