@@ -13,68 +13,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     
-    function showContactSection() {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.classList.remove('hidden-section');
-            contactSection.classList.add('show-section');
-            setTimeout(() => {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }, 100); 
-        }
-    }
-
-    
-    if (window.location.hash === '#contact') {
-        showContactSection();
-    }
-
-    
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
 
-            
+            // Close mobile menu
             if (hamburger) hamburger.classList.remove('active');
             if (navMenu) navMenu.classList.remove('active');
 
-            
-            if (href === '#contact' || href.includes('#contact')) {
-                
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
+            // Only smooth scroll if the link is an anchor on the current page
+            if (href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target) {
                     e.preventDefault();
-                    showContactSection();
-                }
-            }
-            
-            else if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetSection = document.querySelector(href);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             }
         });
     });
 
-    const observerOptions = { threshold: 0.1 };
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    const animatedElements = document.querySelectorAll(
-        '.hero-text-box, .leader-card, .admissions-section'
-    );
+    const animatedElements = document.querySelectorAll('.hero-text-box, .leader-card, .vision-card, .feature-card, .facility-item, .admissions-section');
     
     animatedElements.forEach(el => {
         el.classList.add('fade-in-section'); 
+        el.classList.add('animate-start');
         observer.observe(el);
     });
 });
