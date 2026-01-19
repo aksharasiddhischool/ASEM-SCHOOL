@@ -453,3 +453,104 @@ input:focus, select:focus {
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
+
+/* --- ACTIVITIES PAGE SPECIFIC --- */
+.activities-hero {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.filter-container {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid #008080;
+    background: transparent;
+    color: #008080;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #008080;
+    color: white;
+}
+
+/* Bento Grid Layout */
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 20px;
+    grid-auto-flow: dense;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+
+.gallery-item.large { grid-column: span 2; grid-row: span 2; }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 95, 95, 0.8));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Hidden state for filtering */
+.gallery-item.hide {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .gallery-item.large, .gallery-item.wide { grid-column: span 1; }
+    .bento-grid { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+}
