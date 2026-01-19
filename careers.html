@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Akshara Siddhi E.M. School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-title">
+            <h1>AKSHARA SIDDHI E.M. SCHOOL</h1>
+            <p class="sub-title">Careers Portal</p>
+        </div>
+        
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#academics">Academics</a>
+            <a href="careers.html" style="color: #008080;">Careers</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="admissions-section fade-in-section animate-start">
+        <h2 class="section-heading">Join Our Faculty</h2>
+        <div class="form-container">
+            <p class="form-intro">We are looking for passionate educators to join our team. Apply below.</p>
+            
+            <form class="school-form" action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST" enctype="multipart/form-data">
+                
+                <input type="hidden" name="_subject" value="New Teacher Application (With Certificates)">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_autoresponse" value="Thank you for applying. We have received your application and documents.">
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="Applicant Name" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="Phone" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualification">Qualification</label>
+                        <input type="text" id="qualification" name="Qualification" placeholder="e.g., M.Sc, B.Ed" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subject">Subject Specialization</label>
+                        <select id="subject" name="Subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="maths">Mathematics</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="biology">Biology</option>
+                            <option value="english">English</option>
+                            <option value="telugu">Telugu/Hindi</option>
+                            <option value="social">Social Studies</option>
+                            <option value="primary">Primary (All Subjects)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Experience (Years)</label>
+                        <input type="number" id="experience" name="Experience" placeholder="e.g. 2" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="certificates">Upload Resume / Certificates</label>
+                    <input type="file" id="certificates" name="attachment" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">
+                        Accepted formats: PDF, Word, JPG, PNG. (Max size: 25MB)
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="school-footer">
+        <div class="footer-content">
+            <p>© 2025 Akshara Siddhi E.M. School. All Rights Reserved.</p>
+        </div>
+        <div class="govt-recognition">
+            RECOGNIZED BY THE GOVERNMENT OF ANDHRA PRADESH
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
