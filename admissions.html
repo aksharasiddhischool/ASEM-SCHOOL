@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Akshara Siddhi E.M. School</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <header class="main-header">
+        <div class="header-title">
+            <h1>AKSHARA SIDDHI E.M. SCHOOL</h1>
+            <p class="sub-title">Admissions Portal</p>
+        </div>
+        
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="#" class="active-link">Admissions</a>
+            <a href="index.html#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="admissions-section fade-in-section">
+        <h2 class="section-heading">Join Our Family</h2>
+        <div class="form-container">
+            <p class="form-intro">Admissions are open for the 2025 Academic Year. Please fill out the form below.</p>
+            
+            <form class="school-form" action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST">
+                
+                <input type="hidden" name="_subject" value="New Student Admission Inquiry">
+
+                <input type="hidden" name="_captcha" value="false">
+
+                <input type="hidden" name="_autoresponse" value="Thank you for contacting Akshara Siddhi School. We will call you shortly.">
+
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" name="Student Name" placeholder="Enter student's full name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="grade">Grade Applying For</label>
+                        <select id="grade" name="Grade" required>
+                            <option value="">Select Grade</option>
+                            <option value="nursery">Nursery - UKG</option>
+                            <option value="primary">Class 1 - 5</option>
+                            <option value="middle">Class 6 - 8</option>
+                            <option value="high">Class 9 - 10</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="parentPhone">Parent Phone</label>
+                        <input type="tel" id="parentPhone" name="Phone Number" placeholder="+91 XXXXX XXXXX" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Residential Address</label>
+                    <input type="text" id="address" name="Address" placeholder="Village / Mandal" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Submit Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="school-footer">
+        <div class="footer-content"><p>© 2025 Akshara Siddhi E.M. School.</p></div>
+        <div class="govt-recognition">EST. 2025 | RECOGNIZED BY GOVT. OF AP</div>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>
