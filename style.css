@@ -245,4 +245,16 @@ body::before {
     .govt-recognition {
         font-size: 0.8rem;
     }
+
+}
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, visibility;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
