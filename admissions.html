@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admissions - Akshara Siddhi E.M. School</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* NUCLEAR OVERRIDES - Forces the form to appear regardless of JS errors */
+        body {
+            background-color: white !important;
+            color: black !important;
+        }
+        .admissions-section {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            background-color: #fff !important;
+            padding: 50px 20px !important;
+            min-height: 500px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        /* Ensures inputs are standard and visible */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block !important;
+            visibility: visible !important;
+            color: #333 !important;
+            background: #fff !important;
+            font-size: 1rem;
+            box-sizing: border-box; /* Fixes padding issues */
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        button.btn-submit {
+            background-color: #d32f2f; /* Red from flyer */
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        button.btn-submit:hover {
+            background-color: #b71c1c;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,76 +74,65 @@
             <p class="sub-title">Admissions Portal</p>
         </div>
         
-        <button class="hamburger" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
         <nav class="header-nav">
             <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
+            <a href="about.html">About Us</a>
             <a href="index.html#academics">Academics</a>
-            <a href="careers.html">Careers</a>
-            <a href="#" style="color: #008080;">Admissions</a>
+            <a href="admissions.html" style="color: #008080; font-weight: bold;">Admissions</a>
             <a href="index.html#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="admissions-section fade-in-section animate-start">
-        <h2 class="section-heading">Join Our Family</h2>
+    <section class="admissions-section">
+        <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">Join Our Family</h2>
+        
         <div class="form-container">
-            <p class="form-intro">Admissions are open for the 2025 Academic Year. Please fill out the form below.</p>
-            
-            <form class="school-form" action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST">
+            <div style="background: #e3f2fd; padding: 20px; border-left: 5px solid #2196f3; margin-bottom: 25px; border-radius: 4px;">
+                <h3 style="margin-top:0; color: #1565c0;"><i class="fas fa-info-circle"></i> Direct Admissions Contact</h3>
+                <p style="margin: 5px 0;"><i class="fas fa-phone"></i> <strong>9492396345</strong></p>
+                <p style="margin: 5px 0;"><i class="fas fa-envelope"></i> aksharasiddhischool@gmail.com</p>
+                <p style="margin: 5px 0;"><i class="fas fa-map-marker-alt"></i> Kukkunur- 534341, W.G.Dist (A.P.)</p>
+            </div>
+
+            <form action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST">
                 
-                <input type="hidden" name="_subject" value="New Student Admission Inquiry">
+                <input type="hidden" name="_subject" value="New Admission Inquiry">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_autoresponse" value="Thank you for contacting Akshara Siddhi School. We will call you shortly.">
+                <div class="form-group">
+                    <label>Student Name:</label>
+                    <input type="text" name="Student Name" required placeholder="Enter student's full name">
+                </div>
 
                 <div class="form-group">
-                    <label for="studentName">Student Name</label>
-                    <input type="text" id="studentName" name="Student Name" placeholder="Enter student's full name" required>
+                    <label>Grade Applying For:</label>
+                    <select name="Grade" required>
+                        <option value="">-- Select Grade --</option>
+                        <option value="Nursery">Nursery</option>
+                        <option value="LKG/UKG">LKG / UKG</option>
+                        <option value="Primary (1-5)">Primary (1-5)</option>
+                        <option value="Middle (6-8)">Middle (6-8)</option>
+                        <option value="High School (9-10)">High School (9-10)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Parent Phone Number:</label>
+                    <input type="tel" name="Phone" required placeholder="+91 XXXXX XXXXX">
                 </div>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="grade">Grade Applying For</label>
-                        <select id="grade" name="Grade" required>
-                            <option value="">Select Grade</option>
-                            <option value="nursery">Nursery - UKG</option>
-                            <option value="primary">Class 1 - 5</option>
-                            <option value="middle">Class 6 - 8</option>
-                            <option value="high">Class 9 - 10</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="parentPhone">Parent Phone</label>
-                        <input type="tel" id="parentPhone" name="Phone Number" placeholder="+91 XXXXX XXXXX" required>
-                    </div>
+                <div class="form-group">
+                    <label>Village / Address:</label>
+                    <input type="text" name="Address" required placeholder="Your Village Name">
                 </div>
 
-                <div class="form-group">
-                    <label for="address">Residential Address</label>
-                    <input type="text" id="address" name="Address" placeholder="Village / Mandal" required>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn-submit">Submit Inquiry</button>
-                </div>
+                <button type="submit" class="btn-submit">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer class="school-footer">
-        <div class="footer-content">
-            <p>© 2025 Akshara Siddhi E.M. School. All Rights Reserved.</p>
-        </div>
-        <div class="govt-recognition">
-            RECOGNIZED BY THE GOVERNMENT OF ANDHRA PRADESH
-        </div>
+    <footer class="school-footer" style="text-align: center; padding: 20px; background: #333; color: white; margin-top: 50px;">
+        <p>© 2025 Akshara Siddhi E.M. School | Recognized by Govt. of A.P.</p>
     </footer>
 
-    <script src="java.js"></script>
-</body>
+    </body>
 </html>
