@@ -644,3 +644,19 @@ input:focus, select:focus {
 @media (max-width: 768px) {
     .lightbox-content { width: 95%; }
 }
+/* Add this to your style.css */
+.slogan-text {
+    font-family: 'Brush Script MT', 'Comic Sans MS', cursive; /* Handwritten style */
+    font-size: 1.3rem; /* Slightly larger than subtitle */
+    color: #0056b3; /* Flyer Blue */
+    margin: 5px 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* responsive adjustment */
+@media (max-width: 768px) {
+    .slogan-text {
+        font-size: 1rem;
+    }
+}
