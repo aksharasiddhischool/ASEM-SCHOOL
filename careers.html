@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - Akshara Siddhi E.M. School</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* NUCLEAR OVERRIDES - Forces visibility and clean layout */
+        body {
+            background-color: white !important;
+            color: black !important;
+        }
+        .careers-section {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            background-color: #fff !important;
+            padding: 50px 20px !important;
+            min-height: 500px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block !important;
+            visibility: visible !important;
+            color: #333 !important;
+            background: #fff !important;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        button.btn-submit {
+            background-color: #008080; /* Teal/Green for Careers to differentiate */
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        button.btn-submit:hover {
+            background-color: #004d40;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,94 +73,68 @@
             <p class="sub-title">Careers Portal</p>
         </div>
         
-        <button class="hamburger" aria-label="Toggle navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
         <nav class="header-nav">
             <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
+            <a href="about.html">About Us</a>
             <a href="index.html#academics">Academics</a>
-            <a href="careers.html" style="color: #008080;">Careers</a>
             <a href="admissions.html">Admissions</a>
+            <a href="careers.html" style="color: #008080; font-weight: bold;">Careers</a>
             <a href="index.html#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="admissions-section fade-in-section animate-start">
-        <h2 class="section-heading">Join Our Faculty</h2>
+    <section class="careers-section">
+        <h2 style="text-align: center; color: #008080; margin-bottom: 10px;">Join Our Faculty Team</h2>
+        <p style="text-align: center; margin-bottom: 30px;">We are looking for passionate educators.</p>
+        
         <div class="form-container">
-            <p class="form-intro">We are looking for passionate educators to join our team. Apply below.</p>
             
-            <form class="school-form" action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST" enctype="multipart/form-data">
+            <form action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST">
                 
-                <input type="hidden" name="_subject" value="New Teacher Application (With Certificates)">
+                <input type="hidden" name="_subject" value="New Teacher Job Application">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_autoresponse" value="Thank you for applying. We have received your application and documents.">
+                <div class="form-group">
+                    <label>Full Name:</label>
+                    <input type="text" name="Candidate Name" required placeholder="Enter your full name">
+                </div>
 
                 <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="Applicant Name" placeholder="Your full name" required>
+                    <label>Phone Number:</label>
+                    <input type="tel" name="Phone" required placeholder="+91 XXXXX XXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label>Qualification (Degree):</label>
+                    <input type="text" name="Qualification" required placeholder="e.g., B.Sc, B.Ed, M.A">
+                </div>
+
+                <div class="form-group">
+                    <label>Applying For (Subject/Role):</label>
+                    <select name="Subject" required>
+                        <option value="">-- Select Role --</option>
+                        <option value="Maths">Mathematics</option>
+                        <option value="Science">Science (Phy/Chem/Bio)</option>
+                        <option value="English">English</option>
+                        <option value="Telugu/Hindi">Telugu / Hindi</option>
+                        <option value="Primary Teacher">Primary Teacher</option>
+                        <option value="Nursery Teacher">Nursery / UKG Teacher</option>
+                        <option value="Office Admin">Office Administration</option>
+                    </select>
                 </div>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="Phone" placeholder="+91 XXXXX XXXXX" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="qualification">Qualification</label>
-                        <input type="text" id="qualification" name="Qualification" placeholder="e.g., M.Sc, B.Ed" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="subject">Subject Specialization</label>
-                        <select id="subject" name="Subject" required>
-                            <option value="">Select Subject</option>
-                            <option value="maths">Mathematics</option>
-                            <option value="physics">Physics</option>
-                            <option value="chemistry">Chemistry</option>
-                            <option value="biology">Biology</option>
-                            <option value="english">English</option>
-                            <option value="telugu">Telugu/Hindi</option>
-                            <option value="social">Social Studies</option>
-                            <option value="primary">Primary (All Subjects)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Experience (Years)</label>
-                        <input type="number" id="experience" name="Experience" placeholder="e.g. 2" min="0" required>
-                    </div>
-                </div>
-
                 <div class="form-group">
-                    <label for="certificates">Upload Resume / Certificates</label>
-                    <input type="file" id="certificates" name="attachment" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
-                    <p style="font-size: 0.8rem; color: #666; margin-top: 5px;">
-                        Accepted formats: PDF, Word, JPG, PNG. (Max size: 25MB)
-                    </p>
+                    <label>Years of Experience:</label>
+                    <input type="text" name="Experience" placeholder="e.g., Fresher, 2 years">
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn-submit">Submit Application</button>
-                </div>
+                <button type="submit" class="btn-submit">Submit Application</button>
             </form>
         </div>
     </section>
 
-    <footer class="school-footer">
-        <div class="footer-content">
-            <p>© 2025 Akshara Siddhi E.M. School. All Rights Reserved.</p>
-        </div>
-        <div class="govt-recognition">
-            RECOGNIZED BY THE GOVERNMENT OF ANDHRA PRADESH
-        </div>
+    <footer class="school-footer" style="text-align: center; padding: 20px; background: #333; color: white; margin-top: 50px;">
+        <p>© 2025 Akshara Siddhi E.M. School | Recognized by Govt. of A.P.</p>
     </footer>
 
-    <script src="java.js"></script>
 </body>
 </html>
