@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshara Siddhi E.M. School - Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -28,6 +29,7 @@
             <a href="index.html">Home</a>
             <a href="about.html" class="nav-button">About Us</a>
             <a href="index.html#academics">Academics</a>
+            <a href="games.html" style="color: #ff4500; font-weight: bold;">Kids Zone 🎮</a>
             <a href="activities.html">Activities</a> 
             <a href="admissions.html">Admissions</a>
             <a href="index.html#contact">Contact</a>
@@ -35,10 +37,9 @@
         </nav>
     </header>
 
-    <div class="hero-section" id="home">
-        <div class="hero-image-box">
-            <img src="school_image.jpeg" alt="School Building" class="school-photo">
-        </div>
+    <div class="hero-image-box">
+    <img src="school_image.jpeg" alt="School Building" class="school-photo" style="width: 100%; border-radius: 20px;">
+</div>
 
         <div class="hero-text-box">
             <h2>Empowering Rural Talent with World-Class Education</h2>
@@ -173,6 +174,17 @@
             RECOGNIZED BY THE GOVERNMENT OF ANDHRA PRADESH
         </div>
     </footer>
+    <div id="lego-mini-stage" style="
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 300px; 
+    height: 250px; 
+    z-index: 9999; 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: opacity 1s ease-in;
+"></div>
 
     <script src="java.js"></script>
 </body>
