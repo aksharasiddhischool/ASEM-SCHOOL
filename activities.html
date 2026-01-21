@@ -5,18 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities - Akshara Siddhi School</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- 3D CIRCULAR SCROLL ANIMATION CSS --- */
+        .banner {
+            width: 100%;
+            height: 500px; /* Increased height to give breathing room */
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(to bottom, #f0fdfd, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider {
+            position: absolute;
+            width: 140px;
+            height: 190px;
+            top: 40%; /* MOVED DOWN: Pushed down so it doesn't hit the title */
+            transform-style: preserve-3d;
+            animation: autoRun 45s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes autoRun {
+            from { transform: perspective(1000px) rotateX(-10deg) rotateY(0deg); }
+            to { transform: perspective(1000px) rotateX(-10deg) rotateY(360deg); }
+        }
+
+        .item {
+            position: absolute;
+            inset: 0 0 0 0;
+            transform: 
+                rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                translateZ(650px);
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            transition: transform 0.3s;
+        }
+
+        .item:hover img {
+            transform: scale(1.2);
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .slider:hover {
+            animation-play-state: paused;
+        }
+
+        .highlight-title {
+            position: absolute;
+            top: 30px; /* Locked to top */
+            width: 100%;
+            text-align: center;
+            color: #008080;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            z-index: 10; /* FIXED: Higher number ensures text is always on top */
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 1);
+        }
+
+        /* --- MOBILE RESPONSIVENESS FIX --- */
+        @media (max-width: 768px) {
+            .banner {
+                height: 400px;
+            }
+            .slider {
+                width: 90px;
+                height: 130px;
+                top: 45%; /* Pushed lower on mobile */
+            }
+            .item {
+                transform: 
+                    rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+                    translateZ(350px); 
+            }
+            .highlight-title {
+                font-size: 1.8rem;
+                top: 20px;
+            }
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+                grid-auto-rows: 250px;
+            }
+            .gallery-item.large, .gallery-item.wide, .gallery-item.tall {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="main-header">
         <div class="header-title"><h1>AKSHARA SIDDHI E.M. SCHOOL</h1><p class="sub-title">Campus Life</p></div>
-        <button class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
         <nav class="header-nav">
-            <a href="index.html">Home</a><a href="activities.html" style="color:#008080;">Activities</a><a href="admissions.html">Admissions</a><a href="careers.html">Careers</a>
+            <a href="index.html">Home</a>
+            <a href="games.html">Kids Zone 🎮</a>
+            <a href="activities.html" style="color:#008080;">Activities</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="careers.html">Careers</a>
         </nav>
     </header>
 
+    <div class="banner">
+        <h2 class="highlight-title">✨ Featured Moments ✨</h2>
+        <div class="slider" style="--quantity: 25">
+            <div class="item" style="--position: 1"><img src="1.jpeg" alt="Event 1"></div>
+            <div class="item" style="--position: 2"><img src="2.jpeg" alt="Event 2"></div>
+            <div class="item" style="--position: 3"><img src="3.jpeg" alt="Event 3"></div>
+            <div class="item" style="--position: 4"><img src="4.jpeg" alt="Event 4"></div>
+            <div class="item" style="--position: 5"><img src="5.jpeg" alt="Event 5"></div>
+            <div class="item" style="--position: 6"><img src="6.jpeg" alt="Event 6"></div>
+            <div class="item" style="--position: 7"><img src="7.jpeg" alt="Event 7"></div>
+            <div class="item" style="--position: 8"><img src="8.jpeg" alt="Event 8"></div>
+            <div class="item" style="--position: 9"><img src="9.jpeg" alt="Event 9"></div>
+            <div class="item" style="--position: 10"><img src="10.jpeg" alt="Event 10"></div>
+            <div class="item" style="--position: 11"><img src="11.jpeg" alt="Event 11"></div>
+            <div class="item" style="--position: 12"><img src="12.jpeg" alt="Event 12"></div>
+            <div class="item" style="--position: 13"><img src="13.jpeg" alt="Event 13"></div>
+            <div class="item" style="--position: 14"><img src="14.jpeg" alt="Event 14"></div>
+            <div class="item" style="--position: 15"><img src="15.jpeg" alt="Event 15"></div>
+            <div class="item" style="--position: 16"><img src="16.jpeg" alt="Event 16"></div>
+            <div class="item" style="--position: 17"><img src="17.jpeg" alt="Event 17"></div>
+            <div class="item" style="--position: 18"><img src="18.jpeg" alt="Event 18"></div>
+            <div class="item" style="--position: 19"><img src="19.jpeg" alt="Event 19"></div>
+            <div class="item" style="--position: 20"><img src="20.jpeg" alt="Event 20"></div>
+            <div class="item" style="--position: 21"><img src="21.jpeg" alt="Event 21"></div>
+            <div class="item" style="--position: 22"><img src="22.jpeg" alt="Event 22"></div>
+            <div class="item" style="--position: 23"><img src="23.jpeg" alt="Event 23"></div>
+            <div class="item" style="--position: 24"><img src="24.jpeg" alt="Event 24"></div>
+            <div class="item" style="--position: 25"><img src="25.jpeg" alt="Event 25"></div>
+        </div>
+    </div>
+
     <section class="gallery-section" style="padding: 50px 20px;">
-        <h2 class="section-heading" style="text-align:center; width:100%;">School Activity Gallery</h2>
+        <h2 class="section-heading" style="text-align:center; width:100%;">All Activities Gallery</h2>
         <div class="bento-grid">
             <div class="gallery-item large"><img src="1.jpeg" alt="1"><div class="overlay"><span>Event 1</span></div></div>
             <div class="gallery-item tall"><img src="2.jpeg" alt="2"><div class="overlay"><span>Event 2</span></div></div>
@@ -38,7 +170,7 @@
             <div class="gallery-item"><img src="18.jpeg" alt="18"><div class="overlay"><span>Event 18</span></div></div>
             <div class="gallery-item wide"><img src="19.jpeg" alt="19"><div class="overlay"><span>Event 19</span></div></div>
             <div class="gallery-item"><img src="20.jpeg" alt="20"><div class="overlay"><span>Event 20</span></div></div>
-            <div class="gallery-item tall"><img src="21.jpeg" alt="21"><div class="overlay"><span>Event 21</span></div></div>
+             <div class="gallery-item tall"><img src="21.jpeg" alt="21"><div class="overlay"><span>Event 21</span></div></div>
             <div class="gallery-item large"><img src="22.jpeg" alt="22"><div class="overlay"><span>Event 22</span></div></div>
             <div class="gallery-item"><img src="23.jpeg" alt="23"><div class="overlay"><span>Event 23</span></div></div>
             <div class="gallery-item wide"><img src="24.jpeg" alt="24"><div class="overlay"><span>Event 24</span></div></div>
