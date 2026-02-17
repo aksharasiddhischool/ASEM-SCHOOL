@@ -529,45 +529,45 @@ input:focus, select:focus {
 .hamburger { display: none; background: none; border: none; cursor: pointer; }
 .bar { width: 25px; height: 3px; background: #333; margin: 5px 0; transition: 0.3s; display: block;}
 
+/* --- MOBILE VIEW: SHOW NAV BAR DIRECTLY --- */
 @media (max-width: 900px) {
-    /* Hides the hamburger button */
-    .hamburger { display: none !important; }
+    /* 1. Hide the hamburger menu (the 3 lines) */
+    .hamburger { 
+        display: none !important; 
+    }
     
-    /* Stacks Logo on top, Nav on bottom */
+    /* 2. Stack Logo on top, Nav links below */
     .main-header {
         flex-direction: column;
-        padding: 15px;
+        padding: 10px 0;
+        height: auto;
     }
 
-    /* Forces Nav to be visible and wrap nicely */
+    /* 3. Make Nav Bar Always Visible */
     .header-nav {
-        position: static;
+        position: static !important; /* Stop it from sliding/hiding */
         width: 100%;
         height: auto;
-        background: transparent;
         display: flex !important;
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow links to form two rows if needed */
         justify-content: center;
-        gap: 10px;
-        margin-top: 15px;
-        left: 0;
+        background: transparent;
+        margin-top: 10px;
+        transform: none !important; /* Remove animation */
+        left: 0 !important;
     }
     
-    /* Adjusts link styling for mobile */
+    /* 4. Style the links to look good on phone */
     .header-nav a {
+        font-size: 0.85rem;
         margin: 5px;
-        font-size: 0.9rem;
-        color: #333 !important; /* Forces dark text so it's visible */
-        background: #f0fdfd;    /* Light background pill */
+        color: #333 !important;
+        background: #f0fdfd;
         padding: 8px 12px;
-        border-radius: 20px;
-        font-weight: 600;
+        border-radius: 15px; /* Pill shape buttons */
+        border: 1px solid #008080;
     }
-    
-    .header-nav a:hover {
-        background: #008080;
-        color: white !important;
-    }
+}
 
     /* ... Keep the rest of your hero/section adjustments below this line ... */
 
@@ -674,4 +674,5 @@ input:focus, select:focus {
         font-size: 1rem;
     }
 }
+
 
