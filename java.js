@@ -189,3 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }, 5000); // 5000ms = 5 Seconds
 });
+// --- PRE-LOADER LOGIC ---
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    
+    // We add a 800ms delay so the user actually sees the nice animation 
+    // even if the website loads instantly.
+    setTimeout(() => {
+        if (preloader) {
+            preloader.classList.add('loader-fade-out');
+        }
+    }, 800); 
+});
