@@ -8,143 +8,117 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* NUCLEAR OVERRIDES - Forces visibility and clean layout */
-        body {
-            background-color: white !important;
-            color: black !important;
+        body { background-color: white !important; color: black !important; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .careers-section { padding: 60px 20px !important; background: #f4f7f6; }
+        .form-container { 
+            max-width: 650px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
         }
-        .careers-section {
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            background-color: #fff !important;
-            padding: 50px 20px !important;
-            min-height: 500px;
+        .form-group { margin-bottom: 20px; }
+        label { font-weight: 600; display: block; margin-bottom: 8px; color: #333; }
+        input, select, textarea { 
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; 
+            box-sizing: border-box; font-size: 1rem;
         }
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        input:focus { border-color: #008080; outline: none; box-shadow: 0 0 5px rgba(0,128,128,0.2); }
+        .btn-submit { 
+            background-color: #008080; color: white; padding: 15px; border: none; 
+            border-radius: 6px; cursor: pointer; width: 100%; font-size: 1.1rem; 
+            font-weight: bold; transition: background 0.3s ease;
         }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            display: block !important;
-            visibility: visible !important;
-            color: #333 !important;
-            background: #fff !important;
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        button.btn-submit {
-            background-color: #008080; /* Teal/Green for Careers to differentiate */
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        button.btn-submit:hover {
-            background-color: #004d40;
-        }
+        .btn-submit:hover { background-color: #004d40; }
+        
+        /* Preloader CSS Fix */
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 9999; display: flex; justify-content: center; align-items: center; }
+        .loader-bar { width: 200px; height: 4px; background: #eee; position: relative; overflow: hidden; }
+        .loader-bar::after { content: ''; position: absolute; left: -100%; width: 100%; height: 100%; background: #008080; animation: load 1.5s infinite; }
+        @keyframes load { 100% { left: 100%; } }
     </style>
 </head>
 <body>
-    <div id="preloader">
+
+<div id="preloader">
     <div class="loader-content">
-        <img src="asem_logo.jpeg" alt="Akshara Siddhi Logo" class="loader-logo">
         <div class="loader-bar"></div>
+        <p>Loading Careers Portal...</p>
     </div>
 </div>
 
-    <header class="main-header">
-        <div class="header-title">
-            <h1>AKSHARA SIDDHI E.M. SCHOOL</h1>
-            <p class="sub-title">Careers Portal</p>
-        </div>
-        
-        <nav class="header-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="index.html#academics">Academics</a>
-            <a href="admissions.html">Admissions</a>
-            <a href="careers.html" style="color: #008080; font-weight: bold;">Careers</a>
-            <a href="index.html#contact">Contact</a>
-        </nav>
-    </header>
+<header class="main-header" style="background: #008080; color: white; padding: 20px; text-align: center;">
+    <h1>AKSHARA SIDDHI E.M. SCHOOL</h1>
+    <nav style="margin-top: 15px;">
+        <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+        <a href="about.html" style="color: white; margin: 0 15px; text-decoration: none;">About</a>
+        <a href="careers.html" style="color: #ffd700; margin: 0 15px; text-decoration: none; font-weight: bold;">Careers</a>
+    </nav>
+</header>
 
-    <section class="careers-section">
-        <h2 style="text-align: center; color: #008080; margin-bottom: 10px;">Join Our Faculty Team</h2>
-        <p style="text-align: center; margin-bottom: 30px;">We are looking for passionate educators.</p>
-        
-        <div class="form-container">
+<section class="careers-section">
+    <h2 style="text-align: center; color: #008080;">Faculty Recruitment 2026</h2>
+    <p style="text-align: center; margin-bottom: 40px;">Shape the future with Akshara Siddhi.</p>
+    
+    <div class="form-container">
+        <form action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST" enctype="multipart/form-data">
             
-            <form action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST">
-                
-                <input type="hidden" name="_subject" value="New Teacher Job Application">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://aksharasiddhischool.github.io/ASEM-SCHOOL/thankyou.html">
-                <div class="form-group">
-                    <label>Full Name:</label>
-                    <input type="text" name="Candidate Name" required placeholder="Enter your full name">
-                </div>
+            <input type="hidden" name="_subject" value="New Job Application: ASEM School">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://aksharasiddhischool.github.io/ASEM-SCHOOL/thankyou.html">
 
-                <div class="form-group">
-                    <label>Phone Number:</label>
-                    <input type="tel" name="Phone" required placeholder="+91 XXXXX XXXXX">
-                </div>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="Name" required placeholder="Full Name">
+            </div>
 
-                <div class="form-group">
-                    <label>Qualification (Degree):</label>
-                    <input type="text" name="Qualification" required placeholder="e.g., B.Sc, B.Ed, M.A">
-                </div>
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="tel" name="Phone" required placeholder="+91">
+            </div>
 
-                <div class="form-group">
-                    <label>Applying For (Subject/Role):</label>
-                    <select name="Subject" required>
-                        <option value="">-- Select Role --</option>
-                        <option value="Maths">Mathematics</option>
-                        <option value="Science">Science (Phy/Chem/Bio)</option>
-                        <option value="Office Admin">Social Science</option>
-                        <option value="English">English</option>
-                        <option value="Telugu/Hindi">Telugu </option>
-                        <option value="Primary Teacher">Hindi</option>
-                        <option value="Office Admin">Computers</option>
-                        <option value="Office Admin">Sports/P.T>T</option>
-                        <option value="Nursery Teacher">Primary Teacher/Nursery / UKG Teach</option>
-                        <option value="Office Admin">Office Administration</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Years of Experience:</label>
-                    <input type="text" name="Experience" placeholder="e.g., Fresher, 2 years">
-                </div>
+            <div class="form-group">
+                <label>Position Applied For</label>
+                <select name="Role" required>
+                    <option value="">-- Select Subject --</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Science">Science</option>
+                    <option value="Social">Social Studies</option>
+                    <option value="English">English</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Computers">Computers/IT</option>
+                    <option value="Primary">Primary/Nursery</option>
+                    <option value="Admin">Administration</option>
+                </select>
+            </div>
 
-                <button type="submit" class="btn-submit">Submit Application</button>
-            </form>
-        </div>
-    </section>
+            <div class="form-group">
+                <label>Work Experience</label>
+                <input type="text" name="Experience" placeholder="e.g. 3 Years at XYZ School">
+            </div>
 
-    <footer class="school-footer" style="text-align: center; padding: 20px; background: #333; color: white; margin-top: 50px;">
-        <p>© 2025 Akshara Siddhi E.M. School | Recognized by Govt. of A.P.</p>
-    </footer>
+            <div class="form-group">
+                <label>Upload Resume (PDF only)</label>
+                <input type="file" name="Resume" accept=".pdf" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Application</button>
+        </form>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 20px; background: #333; color: white;">
+    <p>© 2026 Akshara Siddhi E.M. School | Innovative Education</p>
+</footer>
+
+<script>
+    // Ensures preloader disappears even if assets are slow
+    window.addEventListener('load', function() {
+        document.getElementById('preloader').style.display = 'none';
+    });
+</script>
 
 </body>
 </html>
