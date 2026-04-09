@@ -741,22 +741,29 @@ input:focus, select:focus {
     visibility: hidden;
 }
 
-.main-header {
+/* This targets the container holding both logo and text */
+.header-title {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Pushes logo to left and menu to right */
-    padding: 10px 5% ;
+    align-items: center; /* Centers logo vertically against the block of text */
+    gap: 20px;           /* Sets a clean gutter between logo and text */
 }
 
-.school-logo {
-    height: 60px; /* Adjust based on your logo's aspect ratio */
+/* Control the logo size so it doesn't overpower the header */
+.header-logo {
+    height: 80px;        /* Adjust this based on your preference */
     width: auto;
     object-fit: contain;
 }
 
-/* Ensure the nav links align vertically with the logo */
-nav ul {
+/* Ensures the text lines stay stacked vertically */
+.header-text-content {
     display: flex;
-    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Remove default margins that might cause uneven spacing */
+.header-title h1 {
     margin: 0;
+    line-height: 1.2;
 }
