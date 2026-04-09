@@ -4,38 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - Akshara Siddhi E.M. School</title>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 2. Specific Careers Form Styling - This won't break your other pages */
-        .careers-container {
-            padding: 80px 20px;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .career-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 600px;
-        }
+        .careers-container { padding: 80px 20px; background-color: #f9f9f9; display: flex; flex-direction: column; align-items: center; }
+        .career-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); width: 100%; max-width: 600px; }
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-group label { font-weight: bold; display: block; margin-bottom: 8px; color: #333; }
-        .form-group input, .form-group select {
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
-            font-size: 16px; box-sizing: border-box;
-        }
-        .btn-apply {
-            background: #008080; color: white; border: none; padding: 15px;
-            width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer;
-            font-size: 18px; transition: 0.3s;
-        }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
+        .btn-apply { background: #008080; color: white; border: none; padding: 15px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 18px; transition: 0.3s; }
         .btn-apply:hover { background: #004d40; transform: translateY(-2px); }
     </style>
 </head>
@@ -71,53 +50,32 @@
 
         <div class="career-card">
             <form action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST" enctype="multipart/form-data">
-                
                 <input type="hidden" name="_subject" value="New Job Application - ASEM School">
                 <input type="hidden" name="_next" value="https://aksharasiddhischool.github.io/ASEM-SCHOOL/thankyou.html">
                 <input type="hidden" name="_captcha" value="false">
 
+                <div class="form-group"><label>Full Name</label><input type="text" name="Candidate_Name" required></div>
+                <div class="form-group"><label>Contact Number</label><input type="tel" name="Phone" required></div>
                 <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="Candidate_Name" required placeholder="Enter your name">
-                </div>
-
-                <div class="form-group">
-                    <label>Contact Number</label>
-                    <input type="tel" name="Phone" required placeholder="+91">
-                </div>
-
-                <div class="form-group">
-                    <label>Position Applied For</label>
+                    <label>Role</label>
                     <select name="Role" required>
-                        <option value="">-- Choose Subject --</option>
                         <option value="Maths">Mathematics</option>
                         <option value="Science">Science</option>
-                        <option value="English">English</option>
-                        <option value="Telugu">Telugu</option>
                         <option value="Primary">Primary Teacher</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label>Upload Resume (PDF)</label>
-                    <input type="file" name="Resume" accept=".pdf" required>
-                </div>
-
+                <div class="form-group"><label>Upload Resume (PDF)</label><input type="file" name="Resume" accept=".pdf" required></div>
                 <button type="submit" class="btn-apply">Submit Application</button>
             </form>
         </div>
     </section>
 
     <footer class="school-footer" style="text-align: center; padding: 30px; background: #333; color: white;">
-        <p>© 2026 Akshara Siddhi E.M. School | Recognized by Govt. of A.P.</p>
+        <p>© 2026 Akshara Siddhi E.M. School</p>
     </footer>
 
-    <script>
-        window.onload = function() {
-            const preloader = document.getElementById('preloader');
-            if(preloader) preloader.style.display = 'none';
-        }
-    </script>
+    <div id="lego-mini-stage" style="position: fixed; bottom: 0; left: 0; width: 300px; height: 250px; z-index: 9999; pointer-events: none; opacity: 0; transition: opacity 1s ease-in;"></div>
 
+    <script src="java.js"></script>
 </body>
 </html>
