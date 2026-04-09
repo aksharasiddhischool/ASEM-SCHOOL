@@ -121,3 +121,23 @@
 
 </body>
 </html>
+<script>
+    // Function to hide the preloader
+    function hidePreloader() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500); // Smooth fade out
+        }
+    }
+
+    // LOCK 1: Hide when everything is finished loading
+    window.addEventListener('load', hidePreloader);
+
+    // LOCK 2: EMERGENCY FAIL-SAFE 
+    // If the site hasn't shown in 3 seconds, force it to show.
+    // This fixes the "stuck" screen issue.
+    setTimeout(hidePreloader, 3000); 
+</script>
