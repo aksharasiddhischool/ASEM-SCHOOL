@@ -4,81 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admissions - Akshara Siddhi E.M. School</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        body {
-            background-color: white !important;
-            color: black !important;
-        }
-        .admissions-section {
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            background-color: #fff !important;
-            padding: 50px 20px !important;
-            min-height: 500px;
-        }
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        /* Ensures inputs are standard and visible */
-        input, select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            display: block !important;
-            visibility: visible !important;
-            color: #333 !important;
-            background: #fff !important;
-            font-size: 1rem;
-            box-sizing: border-box; /* Fixes padding issues */
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        button.btn-submit {
-            background-color: #d32f2f; /* Red from flyer */
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        button.btn-submit:hover {
-            background-color: #b71c1c;
-        }
+        body { background-color: white !important; color: black !important; }
+        .admissions-section { padding: 50px 20px !important; min-height: 500px; }
+        .form-container { max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; display: block !important; color: #333 !important; background: #fff !important; font-size: 1rem; box-sizing: border-box; }
+        label { font-weight: bold; display: block; margin-bottom: 5px; color: #333; }
+        button.btn-submit { background-color: #d32f2f; color: white; padding: 15px; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
+        button.btn-submit:hover { background-color: #b71c1c; }
     </style>
 </head>
 <body>
     <div id="preloader">
-    <div class="loader-content">
-        <img src="asem_logo.jpeg" alt="Akshara Siddhi Logo" class="loader-logo">
-        <div class="loader-bar"></div>
+        <div class="loader-content">
+            <img src="asem_logo.jpeg" alt="Akshara Siddhi Logo" class="loader-logo">
+            <div class="loader-bar"></div>
+        </div>
     </div>
-</div>
 
     <header class="main-header">
         <div class="header-title">
             <h1>AKSHARA SIDDHI E.M. SCHOOL</h1>
             <p class="sub-title">Admissions Portal</p>
         </div>
-        
         <nav class="header-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
@@ -90,56 +42,39 @@
 
     <section class="admissions-section">
         <h2 style="text-align: center; color: #d32f2f; margin-bottom: 30px;">Join Our Family</h2>
-        
         <div class="form-container">
             <div style="background: #e3f2fd; padding: 20px; border-left: 5px solid #2196f3; margin-bottom: 25px; border-radius: 4px;">
                 <h3 style="margin-top:0; color: #1565c0;"><i class="fas fa-info-circle"></i> Direct Admissions Contact</h3>
                 <p style="margin: 5px 0;"><i class="fas fa-phone"></i> <strong>9492396345</strong></p>
                 <p style="margin: 5px 0;"><i class="fas fa-envelope"></i> aksharasiddhischool@gmail.com</p>
-                <p style="margin: 5px 0;"><i class="fas fa-map-marker-alt"></i> Kukkunur- 534341, W.G.Dist (A.P.)</p>
             </div>
 
             <form action="https://formsubmit.co/aksharasiddhischool@gmail.com" method="POST">
-                
                 <input type="hidden" name="_subject" value="New Admission Inquiry">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://aksharasiddhischool.github.io/ASEM-SCHOOL/thankyou.html">
+                <div class="form-group"><label>Student Name:</label><input type="text" name="Student Name" required placeholder="Full Name"></div>
                 <div class="form-group">
-                    <label>Student Name:</label>
-                    <input type="text" name="Student Name" required placeholder="Enter student's full name">
-                </div>
-
-                <div class="form-group">
-                    <label>Grade Applying For:</label>
+                    <label>Grade:</label>
                     <select name="Grade" required>
-                        <option value="">-- Select Grade --</option>
+                        <option value="">-- Select --</option>
                         <option value="Nursery">Nursery</option>
-                        <option value="LKG/UKG">LKG / UKG</option>
-                        <option value="Primary (1-5)">Primary (1-5)</option>
-                        <option value="Middle (6-8)">Middle (6-8)</option>
-                        <option value="High School (9-10)">High School (9-10)</option>
+                        <option value="Primary">Primary (1-5)</option>
+                        <option value="High School">High School (9-10)</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label>Parent Phone Number:</label>
-                    <input type="tel" name="Phone" required placeholder="+91 XXXXX XXXXX">
-                </div>
-                
-                <div class="form-group">
-                    <label>Village / Address:</label>
-                    <input type="text" name="Address" required placeholder="Your Village Name">
-                </div>
-
+                <div class="form-group"><label>Phone:</label><input type="tel" name="Phone" required placeholder="+91"></div>
                 <button type="submit" class="btn-submit">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer class="school-footer" style="text-align: center; padding: 20px; background: #333; color: white; margin-top: 50px;">
-        <p>© 2025 Akshara Siddhi E.M. School | Recognized by Govt. of A.P.</p>
+    <footer class="school-footer" style="text-align: center; padding: 20px; background: #333; color: white;">
+        <p>© 2025 Akshara Siddhi E.M. School</p>
     </footer>
 
-    </body>
-</html>
+    <div id="lego-mini-stage" style="position: fixed; bottom: 0; left: 0; width: 300px; height: 250px; z-index: 9999; pointer-events: none; opacity: 0; transition: opacity 1s ease-in;"></div>
 
+    <script src="java.js"></script>
+</body>
+</html>
